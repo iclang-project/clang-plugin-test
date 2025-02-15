@@ -7,7 +7,7 @@ add_compile_options(
         "$<$<CXX_COMPILER_ID:GNU,Clang>:-fno-rtti>"
 )
 
-set(MY_LLVM "/home/hzy/hzydata/softwares/llvm/clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04/lib/cmake/" CACHE STRING "LLVM lib/cmake path")
+set(MY_LLVM "/root/hzy/softwares/llvm/clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04/lib/cmake/" CACHE STRING "LLVM lib/cmake path")
 
 message("MY_LLVM: ${MY_LLVM}")
 
@@ -30,3 +30,5 @@ include_directories(SYSTEM ${LLVM_INCLUDE_DIRS} ${CLANG_INCLUDE_DIRS})
 link_directories(${LLVM_LIBRARY_DIRS})
 
 add_library(myplugin MODULE myplugin.cpp)
+
+add_library(funcxable MODULE funcxable.cpp)
